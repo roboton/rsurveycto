@@ -83,7 +83,8 @@ scto_pull <- function(dataset_id, type = "form", scto_auth, start_dt = 1,
     request_url <- stringr::str_glue(
       "{request_url}/datasets/data/csv/{dataset_id}")
   }
-  response <- curl::curl_fetch_memory(request_url, handle = scto_auth)
+  response <- curl::curl_fetch_memory(request_url,
+                                      handle = scto_auth$curl_handle)
   status <- response$status_code
   content <- rawToChar(response$content)
   if (status == 200) {
