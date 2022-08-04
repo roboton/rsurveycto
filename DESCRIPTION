@@ -1,0 +1,19 @@
+Package: rsurveycto
+Title: Access SurveyCTO Data
+Version: 0.0.0.9000
+Authors@R:
+    person("Robert", "On", , "roberton@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-9122-2773"))
+Description: Push and pull data from SurveyCTO form and survey datasets.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
+Imports:
+    curl,
+    fs,
+    httr,
+    jsonlite,
+    lubridate,
+    readr,
+    stringr
