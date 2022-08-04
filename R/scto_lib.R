@@ -64,7 +64,7 @@ scto_auth <- function(servername, username, password) {
 #' @return A dataframe containing the data in wide format.
 #' @export
 scto_pull <- function(dataset_id, type = "form", scto_auth, start_dt = 1,
-                          refresh = FALSE, cache_dir = NULL) {
+                          refresh = FALSE, cache_dir = "scto_data") {
 
   start_dt <- as.integer(lubridate::as_datetime(start_dt))
   local_file <- fs::path(
