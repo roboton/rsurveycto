@@ -1,0 +1,48 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# rsurveycto
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of rsurveycto is to pull and push data from/to SurveyCTO.
+
+## Installation
+
+You can install the development version of rsurveycto from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("roboton/rsurveycto")
+```
+
+## Example
+
+Since this package requires live credentials from SurveyCTO, we don't provide example code that can be run but a commented out example can be found below.
+
+```{r example}
+## basic example code
+
+# library(rsurveycto)
+# 
+# servername <- "myservername"
+# username <- "surveyctologin@email.com"
+# password <- "supersecretpassword"
+# 
+# my_auth <- scto_auth(servername, username, password)
+# my_pull <- scto_pull("my_dataset", "dataset", my_auth)
+# my_push <- scto_push(my_pull, "my_dataset", "My Dataset", my_auth)
+```
