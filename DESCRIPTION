@@ -17,3 +17,5 @@ Imports:
     lubridate,
     readr,
     stringr
+URL: https://github.com/roboton/rsurveycto
+BugReports: https://github.com/roboton/rsurveycto/issues
