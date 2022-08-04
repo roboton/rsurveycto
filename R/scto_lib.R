@@ -75,7 +75,7 @@ scto_pull <- function(dataset_id, type = "form", scto_auth, start_dt = 1,
     return(readr::read_rds(local_file))
   }
 
-  request_url <- stringr::str_glue("{scto$host}/api/v2")
+  request_url <- stringr::str_glue("{scto_auth$host}/api/v2")
   if (type == "form") {
     request_url <- stringr::str_glue(
       "{request_url}/forms/data/wide/json/{dataset_id}?date={start_dt}")
