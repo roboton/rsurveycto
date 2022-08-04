@@ -69,7 +69,7 @@ scto_pull <- function(dataset_id, type = "form", scto_auth, start_dt = 1,
   start_dt <- as.integer(lubridate::as_datetime(start_dt))
   local_file <- fs::path(
     cache_dir,
-    stringr::str_glue("{scto_auth$servername}_{id}_{type}_{start_dt}.rds"))
+    stringr::str_glue("{scto_auth$servername}_{dataset_id}_{type}_{start_dt}.rds"))
 
   if (fs::file_exists(local_file) && !refresh) {
     return(readr::read_rds(local_file))
@@ -78,10 +78,10 @@ scto_pull <- function(dataset_id, type = "form", scto_auth, start_dt = 1,
   request_url <- stringr::str_glue("{scto$host}/api/v2")
   if (type == "form") {
     request_url <- stringr::str_glue(
-      "{request_url}/forms/data/wide/json/{id}?date={start_dt}")
+      "{request_url}/forms/data/wide/json/{dataset_id}?date={start_dt}")
   } else {
     request_url <- stringr::str_glue(
-      "{request_url}/datasets/data/csv/{id}")
+      "{request_url}/datasets/data/csv/{dataset_id}")
   }
   response <- curl::curl_fetch_memory(request_url, handle = scto_auth)
   status <- response$status_code
